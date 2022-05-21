@@ -1,59 +1,69 @@
+import com.sun.javafx.beans.IDProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+import javax.persistence.*;
 import java.util.Date;
+@Entity
 
 public class Employee {
-    private String emailAdres;
-    private String firstName;
-    private String lastName;
-    private Adres Adres;
-    private Date DateOfBirth;
-    private String Profession;
+    @Id
+    @GeneratedValue
+    @Access(AccessType.PROPERTY)
+    private StringProperty emailAddress=new SimpleStringProperty();
+    private StringProperty firstName= new SimpleStringProperty();
+    private StringProperty lastName = new SimpleStringProperty();
+    private ObjectProperty<Address> Address= new SimpleObjectProperty<Address>();
+    private ObjectProperty<DateOfBirth> DateOfBirth= new SimpleObjectProperty<DateOfBirth>();
+    private StringProperty Profession= new SimpleStringProperty();
 
-    public String getEmailAdres() {
-        return emailAdres;
+    public String getEmailAddress() {
+        return emailAddress.getValue();
     }
 
-    public void setEmailAdres(String emailAdres) {
-        this.emailAdres = emailAdres;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress.setValue(emailAddress);
     }
 
     public String getFirstName() {
-        return firstName;
+        return firstName.getValue();
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstName.setValue(firstName);
     }
 
     public String getLastName() {
-        return lastName;
+        return lastName.getValue();
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName.setValue(lastName);
     }
 
-    public Adres getAdres() {
-        return Adres;
+    public Address getAddress() {
+        return Address.getValue();
     }
 
-    public void setAdres(Adres adres) {
-        Adres = adres;
+    public void setAddress(Address address) {this.Address.setValue(address);
     }
 
-    public Date getDateOfBirth() {
-        return DateOfBirth;
+    public DateOfBirth getDateOfBirth() {
+        return DateOfBirth.getValue();
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        DateOfBirth = dateOfBirth;
+    public void setDateOfBirth(DateOfBirth dateOfBirth) {
+        DateOfBirth.setValue(dateOfBirth);
     }
 
     public String getProfession() {
-        return Profession;
+        return Profession.getValue();
     }
 
     public void setProfession(String profession) {
-        Profession = profession;
+        Profession.setValue(profession);
     }
 
     @Override
