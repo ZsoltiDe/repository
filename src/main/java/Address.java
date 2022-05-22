@@ -21,6 +21,14 @@ public class Address {
         this.zipCode = zipCode;
     }
 
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
     public String getCountry() {
         return country;
     }

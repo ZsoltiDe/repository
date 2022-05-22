@@ -11,14 +11,13 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLEmployeeController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLDepartmentAddController">
    <children>
       <SplitPane prefHeight="400.0" prefWidth="189.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0">
          <items>
-            <TableView fx:id="tableView" minWidth="-Infinity" prefHeight="432.0" prefWidth="179.0">
+            <TableView fx:id="nameTable" minWidth="-Infinity" prefHeight="432.0" prefWidth="179.0">
               <columns>
-                <TableColumn fx:id="column1" prefWidth="109.60003356933612" text="Name" />
-                <TableColumn fx:id="column2" prefWidth="77.5999755859375" text="Profession" />
+                <TableColumn fx:id="NameColumn" prefWidth="187.0" text="Name" />
               </columns>
             </TableView>
          </items>
@@ -45,20 +44,18 @@
             <Label prefHeight="19.0" prefWidth="121.0" text="Adress:" GridPane.rowIndex="4" />
             <Label prefHeight="19.0" prefWidth="121.0" text="E-mail adress:" GridPane.rowIndex="5" />
             <Label prefHeight="19.0" prefWidth="121.0" text="Profession:" GridPane.rowIndex="6" />
-            <Label fx:id="emailAdres" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" />
-            <Label fx:id="dateOfBirth" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="adres" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="profession" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label fx:id="phoneNumber" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label fx:id="phoneNumber1" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label fx:id="phoneNumber11" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="nameLabel" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" />
+            <Label fx:id="genderLabel" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="dateOfBirthLabel" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="phoneNumberLabel" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="adressLabel" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="emailAdressLabel" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="professionLabel" prefHeight="19.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
          <padding>
             <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
          </padding>
       </GridPane>
-      <Button layoutX="248.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleAddEmployee" prefHeight="24.0" prefWidth="72.0" style="-fx-cursor: hand;" text="Add " />
-      <Button layoutX="422.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleDeleteEmployee" style="-fx-cursor: hand;" text="Delete" />
-      <Button layoutX="572.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleEditEmployee" style="-fx-cursor: hand;" text="Edit" />
+      <Button layoutX="391.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleAddEmployeeToDepartment" prefHeight="24.0" prefWidth="72.0" style="-fx-cursor: hand;" text="Add " />
    </children>
 </AnchorPane>
