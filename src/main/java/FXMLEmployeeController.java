@@ -110,6 +110,7 @@ public class FXMLEmployeeController implements Initializable {
 
 
 
+
     @FXML
     void handleDeleteEmployee(ActionEvent event) {
         int index= tableView.getSelectionModel().getSelectedIndex();
@@ -119,6 +120,17 @@ public class FXMLEmployeeController implements Initializable {
 
     @FXML
     void handleEditEmployee(ActionEvent event) {
+        Employee employee = tableView.getSelectionModel().getSelectedItem();
+
+        if (employee != null) {
+            boolean okClicked = mainApp.windowEmployeeAdd(model.getEmployee());
+            if (okClicked) {
+                model.setEmployee(employee);
+                model.getObservableListEmployee().add(model.getEmployee());
+                //model.getEmployeeDAO().saveEmployee(model.getEmployee());
+                //showEmployeeDetails(model.getEmployee());
+            }
+        }
 
     }
 
