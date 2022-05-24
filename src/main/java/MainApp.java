@@ -46,11 +46,11 @@ public class MainApp extends Application {
             if(a==2) {
                 ((FXMLEmployeeController) (loader2.getController())).setMainApp(this);
                 ((FXMLEmployeeController) (loader2.getController())).setStage(stage);
-                ((FXMLEmployeeController) (loader2.getController())).setModel(new Model());
+                ((FXMLEmployeeController) (loader2.getController())).setModel(((FXMLRootController)(loader.getController())).getModel());
             }else{
                 ((FXMLDepartmentController)(loader2.getController())).setMainApp(this);
                 ((FXMLDepartmentController) (loader2.getController())).setStage(stage);
-                ((FXMLDepartmentController) (loader2.getController())).setModel(new Model());
+                ((FXMLDepartmentController) (loader2.getController())).setModel(((FXMLRootController)(loader.getController())).getModel());
 
             }
         }catch(IOException e) {
@@ -79,7 +79,7 @@ public class MainApp extends Application {
         stage.show();
     }
     
-    public void windowEmployeeAdd(){
+    public boolean windowEmployeeAdd(Employee employee){
         try{
             stage2.setResizable(false);
             stage2.setWidth(460);
@@ -91,12 +91,17 @@ public class MainApp extends Application {
             
             Scene scene = new Scene(loader3.load());
             stage2.setScene(scene);
-            ((FXMLEmployeeAddController) (loader3.getController())).setMainApp(this);
+            //((FXMLEmployeeAddController) (loader3.getController())).setMainApp(this);
             ((FXMLEmployeeAddController) (loader3.getController())).setStage(stage2);
-            ((FXMLEmployeeAddController) (loader3.getController())).setModel(new Model());
+            ((FXMLEmployeeAddController) (loader3.getController())).setEmployee(employee);
+            //((FXMLEmployeeAddController) (loader3.getController())).setModel(new Model());
             stage2.show();
+            return ((FXMLEmployeeAddController) (loader3.getController())).isOkClicked();
+
         }catch(IOException e) {
             e.printStackTrace();
+            return false;
+
         }
     }
     

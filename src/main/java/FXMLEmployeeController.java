@@ -1,3 +1,5 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,14 +18,10 @@ import java.util.ResourceBundle;
 public class FXMLEmployeeController implements Initializable {
 
 
-
-
-
     Model model;
     MainApp mainApp;
     Stage stage;
-
-
+    ObservableList observableListEmployee= FXCollections.observableArrayList();
     public Model getModel() {
         return model;
     }
@@ -46,6 +44,7 @@ public class FXMLEmployeeController implements Initializable {
 
     public void setStage(Stage stage) {
         this.stage = stage;
+
     }
 
 
@@ -53,10 +52,14 @@ public class FXMLEmployeeController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //bind();
 
+        //bind();
+        column1.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        column2.setCellValueFactory(cellData -> cellData.getValue().professionProperty());
 
     }
-    @FXML
-    private Label adres;
+
+
+
 
     @FXML
     private TableColumn<Employee, String> column1;
@@ -65,22 +68,24 @@ public class FXMLEmployeeController implements Initializable {
     private TableColumn<Employee, String> column2;
 
     @FXML
+    private Label adress;
+
+
+    @FXML
     private Label dateOfBirth;
 
-    @FXML
-    private Label dateofbirth;
 
     @FXML
-    private Label emailAdres;
+    private Label emailAdress;
+
+    @FXML
+    private Label gender;
+
+    @FXML
+    private Label name;
 
     @FXML
     private Label phoneNumber;
-
-    @FXML
-    private Label phoneNumber1;
-
-    @FXML
-    private Label phoneNumber11;
 
     @FXML
     private Label profession;
@@ -90,8 +95,19 @@ public class FXMLEmployeeController implements Initializable {
 
     @FXML
     void handleAddEmployee(ActionEvent event) {
-        mainApp.windowEmployeeAdd();
+        Employee employee= new Employee();
+        boolean isOkClicked = mainApp.windowEmployeeAdd(employee);
+        if (isOkClicked) {
+            observableListEmployee.addAll(employee);
+
+            //model.getEmployeeDAO().saveEmployee(model.getEmployee());
+            model.getObservableListEmployee().add(employee);
+            tableView.setItems(model.getObservableListEmployee());
+        }
     }
+
+
+
 
     @FXML
     void handleDeleteEmployee(ActionEvent event) {
