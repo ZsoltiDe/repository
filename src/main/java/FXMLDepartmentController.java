@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+
 public class FXMLDepartmentController implements Initializable {
     Stage stage;
     MainApp mainApp;
@@ -62,7 +64,7 @@ public class FXMLDepartmentController implements Initializable {
 
     @FXML
     void handleAddNewEmployee(ActionEvent event) {
-
+        mainApp.windowDepartmentAdd();
     }
 
     @FXML

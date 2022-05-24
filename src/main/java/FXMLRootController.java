@@ -34,36 +34,27 @@ public class FXMLRootController implements Initializable {
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-
-
-
+    
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //bind();
-
-
     }
-
-
-
+    
 
     int a;
     @FXML
-    void Department(ActionEvent event) {
-
+    public void Department(ActionEvent event) {
         mainApp.setActualScene("/Department.fxml",1);
     }
 
     @FXML
-    void Employees(ActionEvent event) {
-
-
-            mainApp.setActualScene("/Employees.fxml",2);
-
+    public void Employees(ActionEvent event) {
+        mainApp.setActualScene("/Employees.fxml",2);
     }
 
     @FXML
-    void Exit(ActionEvent event) {
+    public void Exit(ActionEvent event) {
         stage.close();
     }
 
@@ -76,6 +67,18 @@ public class FXMLRootController implements Initializable {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

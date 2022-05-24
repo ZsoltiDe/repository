@@ -10,6 +10,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
+
+
+
 public class FXMLEmployeeController implements Initializable {
 
 
@@ -87,12 +90,12 @@ public class FXMLEmployeeController implements Initializable {
 
     @FXML
     void handleAddEmployee(ActionEvent event) {
-
+        mainApp.windowEmployeeAdd();
     }
 
     @FXML
     void handleDeleteEmployee(ActionEvent event) {
-
+        
     }
 
     @FXML

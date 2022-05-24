@@ -6,6 +6,8 @@ import javafx.beans.property.StringProperty;
 
 import javax.persistence.*;
 import java.util.Date;
+
+
 @Entity
 
 public class Employee {
