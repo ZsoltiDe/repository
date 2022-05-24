@@ -81,7 +81,7 @@ public class FXMLEmployeeAddController implements Initializable {
 
     @FXML
     private void handleaddEmployee() {
-        //if (isInputValide()) {
+        if (isInputValide()) {
             employee.setName(nameField.getText());
             employee.setAddress(adressField.getText());
             employee.setPhoneNumber(Integer.parseInt(phoneNumberField.getText()));
@@ -89,10 +89,10 @@ public class FXMLEmployeeAddController implements Initializable {
             employee.setGender(genderField.getText());
             employee.setEmailAddress(emailAdressField.getText());
             employee.setDateOfBirth(DateUtil.parse(dateOfBirthField.getText()));
-            okClicked= true;
+            okClicked = true;
             stage.close();
 
-        //}
+        }
     }
 
 
