@@ -5,6 +5,6 @@ public interface EmployeeDAO extends AutoCloseable {
     public void deleteEmployee(Employee employee);
     public void updateEmployee(Employee employee);
     public List<Employee> getEmployee();
-    public void close();
+    public void close()throws InterruptedException;
 
 }
